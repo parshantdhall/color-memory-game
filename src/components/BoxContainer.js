@@ -21,7 +21,6 @@ class BoxContainer extends React.Component{
     colorsArr: [
       'black', 'green', 'blue', 'red', 'yellow', 'bisque', 'pink', 'brown', 'DodgerBlue', '#6A1B9A', '#D1C4E9',
       '#4DD0E1',
-      {id: 0}
     ]
   }
 
@@ -41,17 +40,18 @@ class BoxContainer extends React.Component{
     if(pel1 !== '' && pel2 !== '') {
       if(nel2.style.backgroundColor !== pel2.style.backgroundColor) {
 
-        nel2.addEventListener('transitionend', function() {
+        nel2.addEventListener('transitionend', () =>  {
           nel1.style.removeProperty('transform');
           nel2.style.removeProperty('transform');
           pel1.style.removeProperty('transform');
           pel2.style.removeProperty('transform');
-        });
-        this.setState({
-          prevElement: {
-            el1: '',
-            el2: ''
-          }
+
+          this.setState({
+            prevElement: {
+              el1: '',
+              el2: ''
+            }
+          });
         });
       }else {
         this.setState({
