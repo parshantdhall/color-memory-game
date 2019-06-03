@@ -1,0 +1,10 @@
+.box-container {
+  width: 100%;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
